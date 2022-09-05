@@ -5,6 +5,7 @@
 //-------------------------------------------------------------------------
 using System.Collections;
 using System.Text;
+using System.Numerics;
 
 namespace WordsPhrases
 {
@@ -49,11 +50,16 @@ namespace WordsPhrases
         public string GetPhrase()
         {
             StringBuilder phrase = new StringBuilder();
-
+            int counter=2;
             foreach (Word word in this.words)
             {
-                phrase.Append(" ");
+                
                 phrase.Append(word.Text);
+                if(counter>1){
+                    phrase.Append(" ");
+                }
+                counter=counter-1;
+                
             }
 
             string result = phrase.ToString();
